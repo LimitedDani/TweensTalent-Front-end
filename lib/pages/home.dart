@@ -128,6 +128,63 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             )),
+        SuperPower(
+            route: "taaltalent",
+            image: "assets/darkblue.png",
+            completed: () {
+              openCompletePopup();
+            },
+            title: new Column(
+              children: <Widget>[
+                new Text(
+                  "Taal"?.toUpperCase(),
+                  style: TextStyle(
+                      color: utils.HexColor("#0076FF"), fontSize: 40.0),
+                ),
+                new Text(
+                  "Talent"?.toUpperCase(),
+                  style: TextStyle(color: Colors.white, fontSize: 40.0),
+                )
+              ],
+            )),
+        SuperPower(
+            route: "rekentalent",
+            image: "assets/red.png",
+            completed: () {
+              openCompletePopup();
+            },
+            title: new Column(
+              children: <Widget>[
+                new Text(
+                  "Reken"?.toUpperCase(),
+                  style: TextStyle(
+                      color: utils.HexColor("#F00D4C"), fontSize: 40.0),
+                ),
+                new Text(
+                  "Talent"?.toUpperCase(),
+                  style: TextStyle(color: Colors.white, fontSize: 40.0),
+                )
+              ],
+            )),
+        SuperPower(
+            route: "muziektalent",
+            image: "assets/orange.png",
+            completed: () {
+              openCompletePopup();
+            },
+            title: new Column(
+              children: <Widget>[
+                new Text(
+                  "Muziek"?.toUpperCase(),
+                  style: TextStyle(
+                      color: utils.HexColor("#FF9133"), fontSize: 40.0),
+                ),
+                new Text(
+                  "Talent"?.toUpperCase(),
+                  style: TextStyle(color: Colors.white, fontSize: 40.0),
+                )
+              ],
+            )),
       ];
     });
     super.initState();
@@ -139,7 +196,10 @@ class _HomePageState extends State<HomePage> {
       "beeldtalent",
       "beweegtalent",
       "menstalent",
-      "zelftalent"
+      "zelftalent",
+      "taaltalent",
+      "muziektalent",
+      "rekentalent"
     ]).then((result) {
       customSmallOverlay = new CustomOverlaySmall(
         overlayEntry: overlayEntry,
@@ -223,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                             right: 0.0,
                             child: new Container(
                               color: Colors.transparent,
-                              padding: const EdgeInsets.all(20.0),
+                              padding: const EdgeInsets.all(10.0),
                               child: new Center(
                                 child: new DotsIndicator(
                                   controller: _controller,

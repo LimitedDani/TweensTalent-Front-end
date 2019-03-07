@@ -59,7 +59,6 @@ class MyApp extends StatelessWidget {
             ),
             image: new Image(
               image: AssetImage("assets/purple.png"),
-              fit: BoxFit.cover
             )),
         '/questions/beweegtalent': (BuildContext context) => QuestionPage(
             title: AutoSizeText.rich(
@@ -110,6 +109,54 @@ class MyApp extends StatelessWidget {
             ),
             image: new Image(
               image: AssetImage("assets/lightblue.png"),
+            )),
+        '/questions/taaltalent': (BuildContext context) => QuestionPage(
+            title: AutoSizeText.rich(
+              TextSpan(
+                text: "Taal"?.toUpperCase(),
+                children: <TextSpan>[
+                  new TextSpan(
+                      text: 'Talent'?.toUpperCase(), style: TextStyle(color: Colors.white)),
+                ],
+              ),
+              style:
+              TextStyle(color: utils.HexColor("#0076FF"), fontSize: 40.0),
+              maxLines: 1,
+            ),
+            image: new Image(
+              image: AssetImage("assets/darkblue.png"),
+            )),
+        '/questions/muziektalent': (BuildContext context) => QuestionPage(
+            title: AutoSizeText.rich(
+              TextSpan(
+                text: "Muziek"?.toUpperCase(),
+                children: <TextSpan>[
+                  new TextSpan(
+                      text: 'Talent'?.toUpperCase(), style: TextStyle(color: Colors.white)),
+                ],
+              ),
+              style:
+              TextStyle(color: utils.HexColor("#FF9133"), fontSize: 34.0),
+              maxLines: 1,
+            ),
+            image: new Image(
+              image: AssetImage("assets/orange.png"),
+            )),
+        '/questions/rekentalent': (BuildContext context) => QuestionPage(
+            title: AutoSizeText.rich(
+              TextSpan(
+                text: "Reken"?.toUpperCase(),
+                children: <TextSpan>[
+                  new TextSpan(
+                      text: 'Talent'?.toUpperCase(), style: TextStyle(color: Colors.white)),
+                ],
+              ),
+              style:
+              TextStyle(color: utils.HexColor("#F00D4C"), fontSize: 36.0),
+              maxLines: 1,
+            ),
+            image: new Image(
+              image: AssetImage("assets/red.png"),
             )),
       },
     );
