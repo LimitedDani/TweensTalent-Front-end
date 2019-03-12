@@ -5,6 +5,7 @@ import 'package:tweenstalent/pages/register.dart';
 import 'package:tweenstalent/pages/forgotpassword.dart';
 import 'package:tweenstalent/pages/home.dart';
 import 'package:tweenstalent/pages/questions.dart';
+import 'package:tweenstalent/pages/results.dart';
 import 'package:tweenstalent/utils.dart' as utils;
 import 'package:auto_size_text/auto_size_text.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/register': (BuildContext context) => RegisterPage(),
         '/forgotpassword': (BuildContext context) => ForgotPasswordPage(),
         '/home': (BuildContext context) => HomePage(),
+        '/results': (BuildContext context) => ResultPage(),
         '/questions/natuurtalent': (BuildContext context) => QuestionPage(
             title: AutoSizeText.rich(
               TextSpan(

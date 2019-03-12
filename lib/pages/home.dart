@@ -187,6 +187,20 @@ class _HomePageState extends State<HomePage> {
             )),
       ];
     });
+    utils.countCompletedTalents([
+      "natuurtalent",
+      "beeldtalent",
+      "beweegtalent",
+      "menstalent",
+      "zelftalent",
+      "taaltalent",
+      "muziektalent",
+      "rekentalent"
+    ]).then((result) {
+      if(result == 8) {
+        Navigator.of(context).pushReplacementNamed("/results");
+      }
+    });
     super.initState();
   }
 
@@ -201,6 +215,10 @@ class _HomePageState extends State<HomePage> {
       "muziektalent",
       "rekentalent"
     ]).then((result) {
+      if(result == 8) {
+        Navigator.of(context).pushReplacementNamed("/results");
+        return;
+      }
       customSmallOverlay = new CustomOverlaySmall(
         overlayEntry: overlayEntry,
         child: new Column(
