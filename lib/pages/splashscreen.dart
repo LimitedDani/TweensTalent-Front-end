@@ -71,15 +71,15 @@ class _SplashScreenState extends State<SplashScreen>
                 "Tweens"?.toUpperCase(),
                 style: TextStyle(
                     color: utils.colorLogo1,
-                    fontSize: 70.0,
-                    fontFamily: "Bold Testament"),
+                    fontSize: 40.0,
+                    fontFamily: "Amateur Dirty"),
               ),
               new Text(
                 "Talent"?.toUpperCase(),
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 70.0,
-                    fontFamily: "Bold Testament"),
+                    fontSize: 40.0,
+                    fontFamily: "Amateur Dirty"),
               )
             ],
           ),

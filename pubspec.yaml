@@ -23,7 +23,7 @@ dependencies:
   auto_size_text: ^1.0.0
   path_provider: 0.4.1
   barcode_scan: ^0.0.4
-  qr_flutter: ^1.1.1
+  qr_flutter: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -57,9 +57,11 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: "Bold Testament"
+  - family: "Amateur Dirty"
     fonts:
-    - asset: fonts/boldtestament.otf
-
+    - asset: fonts/AmateurDirty.ttf
+  - family: "American Captain"
+    fonts:
+    - asset: fonts/AmericanCaptain.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages

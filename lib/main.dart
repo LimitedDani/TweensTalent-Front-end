@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:tweenstalent/pages/login.dart';
 import 'package:tweenstalent/pages/splashscreen.dart';
 import 'package:tweenstalent/pages/register.dart';
@@ -6,14 +8,36 @@ import 'package:tweenstalent/pages/forgotpassword.dart';
 import 'package:tweenstalent/pages/home.dart';
 import 'package:tweenstalent/pages/questions.dart';
 import 'package:tweenstalent/pages/results.dart';
+import 'package:tweenstalent/pages/occupationalprofile.dart';
+
+import 'package:tweenstalent/pages/certificate.dart';
+
+import 'package:tweenstalent/admin/pages/scanner.dart';
 import 'package:tweenstalent/utils.dart' as utils;
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
+  dev() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("natuurtalent", true);
+    prefs.setBool("beeldtalent", true);
+    prefs.setBool("beweegtalent", true);
+    prefs.setBool("menstalent", true);
+    prefs.setBool("zelftalent", true);
+    prefs.setBool("taaltalent", true);
+    prefs.setBool("rekentalent", true);
+    prefs.setBool("muziektalent", true);
+
+  }
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    dev();
     return MaterialApp(
       title: 'Tweenstalent',
       theme: ThemeData(
@@ -22,12 +46,20 @@ class MyApp extends StatelessWidget {
       ),
       home: SplashScreen(),
       routes: <String, WidgetBuilder>{
+        '/admin/scanner': (BuildContext context) => ScanScreen(),
+
+
+
+
         '/splashscreen': (BuildContext context) => SplashScreen(),
         '/login': (BuildContext context) => LoginPage(),
         '/register': (BuildContext context) => RegisterPage(),
         '/forgotpassword': (BuildContext context) => ForgotPasswordPage(),
         '/home': (BuildContext context) => HomePage(),
         '/results': (BuildContext context) => ResultPage(),
+        '/occupationalprofile': (BuildContext context) => OccupationalProfilePage(),
+        '/qrcode': (BuildContext context) => GenerateScreen(),
+
         '/questions/natuurtalent': (BuildContext context) => QuestionPage(
             title: AutoSizeText.rich(
               TextSpan(

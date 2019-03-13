@@ -18,11 +18,11 @@ class _ResultState extends State<Result> {
   }
 
   Widget build(BuildContext context) {
-    return                     new Column(
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             new Text("Zelftalent", style: TextStyle(color: Colors.white,)),
             scoreDots(score: 6),
@@ -104,9 +104,6 @@ class _ResultState extends State<Result> {
             new Text("Muzikaaltalent", style: TextStyle(color: Colors.white),),
             scoreDots(score: 5),
           ],
-        ),
-        new SizedBox(
-          height: 10,
         ),
       ],
     );

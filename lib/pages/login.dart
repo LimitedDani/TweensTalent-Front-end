@@ -10,11 +10,15 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final TextEditingController email = new TextEditingController(text: "admin@admin.nl");
+  final TextEditingController password = new TextEditingController(text: "admin");
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: true,
         body: new Material(
+          child: new SingleChildScrollView(
             child: new Container(
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
@@ -58,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: new TextFormField(
                                           keyboardType:
                                               TextInputType.emailAddress,
+                                          controller: email,
                                           decoration: new InputDecoration(
                                             border: InputBorder.none,
                                             hintText: 'you@example.com',
@@ -73,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                       child: new TextFormField(
                                           obscureText: true,
+                                          controller: password,
                                           decoration: new InputDecoration(
                                               border: InputBorder.none,
                                               hintText: '•••••••••••',
@@ -112,7 +118,13 @@ class _LoginPageState extends State<LoginPage> {
                                             shape: new RoundedRectangleBorder(
                                                 borderRadius:
                                                 new BorderRadius.circular(30.0)),
-                                            onPressed: () {Navigator.pushReplacementNamed(context, "/home");},
+                                            onPressed: () {
+                                                if(email.text.contains("admin@admin.nl") && password.text.contains("admin")) {
+                                                  Navigator.pushReplacementNamed(context, "/admin/scanner");
+                                                } else {
+                                                  Navigator.pushReplacementNamed(context, "/home");
+                                                }
+                                              },
                                             color: utils.HexColor("#AA1741"),
                                           ),
                                           margin: new EdgeInsets.only(top: 20.0),
@@ -148,6 +160,6 @@ class _LoginPageState extends State<LoginPage> {
                               )),
                         ],
                       )),
-                ]))));
+                ])))));
   }
 }
